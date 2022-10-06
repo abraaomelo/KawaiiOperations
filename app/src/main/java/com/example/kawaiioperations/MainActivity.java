@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
         btn_mult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MultChoose.class);
-                startActivity(intent);
+                Intent intentMultChoose = new Intent(getApplicationContext(), MultChoose.class);
+                startActivity(intentMultChoose);
             }
         });
 

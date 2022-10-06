@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+
 public class MultChoose extends AppCompatActivity {
 
     private Button btn_two;
@@ -20,8 +22,11 @@ public class MultChoose extends AppCompatActivity {
         btn_two.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), OperationsTriviaMult.class);
-                startActivity(intent);
+                Intent intentTrivia = new Intent(getApplicationContext(), OperationsTriviaMult.class);
+                ArrayList<Integer> numValuesFamily = new ArrayList<Integer>();
+                numValuesFamily.add(8);
+                intentTrivia.putExtra("numFamily", numValuesFamily);
+                startActivity(intentTrivia);
             }
         });
     }
