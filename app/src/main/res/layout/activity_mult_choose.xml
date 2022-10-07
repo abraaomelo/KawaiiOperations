@@ -41,18 +41,21 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <CheckBox
+                android:id="@+id/cbx_n1"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="1"
                 android:textSize="10pt" />
 
             <CheckBox
+                android:id="@+id/cbx_n2"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="2"
                 android:textSize="10pt" />
 
             <CheckBox
+                android:id="@+id/cbx_n3"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="3"
@@ -67,18 +70,21 @@
             android:layout_below="@+id/linearLayout1to3">
 
             <CheckBox
+                android:id="@+id/cbx_n4"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="4"
                 android:textSize="10pt" />
 
             <CheckBox
+                android:id="@+id/cbx_n5"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="5"
                 android:textSize="10pt" />
 
             <CheckBox
+                android:id="@+id/cbx_n6"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="6"
@@ -93,18 +99,21 @@
             android:layout_below="@+id/linearLayout4to6">
 
             <CheckBox
+                android:id="@+id/cbx_n7"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="7"
                 android:textSize="10pt" />
 
             <CheckBox
+                android:id="@+id/cbx_n8"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="8"
                 android:textSize="10pt" />
 
             <CheckBox
+                android:id="@+id/cbx_n9"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="9"
@@ -118,7 +127,7 @@
         android:id="@+id/btn_twomult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="3"
+        android:text="Go!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

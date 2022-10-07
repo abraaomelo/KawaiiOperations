@@ -53,6 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="208dp"
         android:text="Result"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -68,9 +69,13 @@
         <EditText
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:hint="Resultado"
+            android:hint="......"
             android:id="@+id/et_result"
             android:inputType="number"
+            android:textColor="@color/purple_200"
+            android:shadowColor="#07FCC5"
+            android:shadowRadius="5"
+            android:textSize="20pt"
             />
 
         <Button
