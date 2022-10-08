@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout/activity_high_score.xml" value="0.5619791666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.31567028985507245" />
         <entry key="app/src/main/res/layout/activity_mult_choose.xml" value="0.31567028985507245" />
         <entry key="app/src/main/res/layout/activity_operations_trivia_mult.xml" value="0.31567028985507245" />
