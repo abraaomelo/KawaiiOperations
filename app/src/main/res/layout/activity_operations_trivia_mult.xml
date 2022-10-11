@@ -20,11 +20,46 @@
         app:layout_constraintHorizontal_bias="0.155"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/heart1"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/blueheart" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/heart2"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/blueheart" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/heart3"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/blueheart" />
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="128dp"
+        android:layout_marginBottom="116dp"
         android:text="Score"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"

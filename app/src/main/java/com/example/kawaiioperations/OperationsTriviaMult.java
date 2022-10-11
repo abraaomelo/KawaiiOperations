@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,7 +24,7 @@ public class OperationsTriviaMult extends AppCompatActivity {
     private EditText etResult;
     Random randomNum = new Random();
     private Integer hearts=3, score=0;
-
+    private ImageView h1,h2,h3;
 
 
 
@@ -38,6 +39,9 @@ public class OperationsTriviaMult extends AppCompatActivity {
         tv_factor2 = findViewById(R.id.tv_factor2);
         tv_result = findViewById(R.id.tv_result);
         tv_hearts = findViewById(R.id.tv_hearts);
+        h1 = findViewById(R.id.heart1);
+        h2 = findViewById(R.id.heart2);
+        h3 = findViewById(R.id.heart3);
 
         int numF1 = RandArray(arrayF11);
         tv_hearts.setText(hearts.toString());
@@ -105,6 +109,12 @@ public class OperationsTriviaMult extends AppCompatActivity {
                                 tv_factor2.setText(factor2.toString());
                                 etResult.getText().clear();
                             }
+                            if (hearts==2){
+                                h3.setVisibility(View.INVISIBLE);
+                            }else if (hearts==1){
+                                h2.setVisibility(View.INVISIBLE);
+                            }
+
                         }
 
                     }
