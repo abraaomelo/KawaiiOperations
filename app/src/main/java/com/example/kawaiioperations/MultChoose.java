@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -38,8 +39,13 @@ public class MultChoose extends AppCompatActivity {
                 Intent intentTrivia = new Intent(getApplicationContext(), OperationsTriviaMult.class);
                 //numValuesFamily.add(8);
                 numValuesFamily = checkBoxValidation();
+
+                if(numValuesFamily.isEmpty()){
+                    Toast.makeText(getApplicationContext(),"Please, select at least a number", Toast.LENGTH_SHORT).show();
+                }else{
                 intentTrivia.putExtra("numFamily", numValuesFamily);
                 startActivity(intentTrivia);
+                }
             }
         });
     }
@@ -74,5 +80,11 @@ public class MultChoose extends AppCompatActivity {
             array.add(9);
         }
         return (array);
+    }
+
+    @Override
+    public void onBackPressed(){
+        Intent intentBack = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intentBack);
     }
 }

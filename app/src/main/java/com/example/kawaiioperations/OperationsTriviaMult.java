@@ -10,22 +10,26 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class OperationsTriviaMult extends AppCompatActivity {
-    private TextView tv_factor1, tv_factor2, tv_result, tv_hearts;
+    private TextView tv_factor1, tv_factor2, tv_score;
     private Integer factor1, factor2, result;
     private String resultEDT;
     private Button btnResultgo;
     private EditText etResult;
     Random randomNum = new Random();
-    private Integer hearts=3, score=0;
+    private Integer hearts=3, score=0,counter = 0;
     private ImageView h1,h2,h3;
-
+    ProgressBar pb;
+    //int counter = 0;
 
 
     @Override
@@ -37,17 +41,13 @@ public class OperationsTriviaMult extends AppCompatActivity {
         ArrayList<Integer> arrayF11 = intent.getIntegerArrayListExtra("numFamily");
         tv_factor1 = findViewById(R.id.tv_factor1);
         tv_factor2 = findViewById(R.id.tv_factor2);
-        tv_result = findViewById(R.id.tv_result);
-        tv_hearts = findViewById(R.id.tv_hearts);
+        tv_score = findViewById(R.id.tv_score);
         h1 = findViewById(R.id.heart1);
         h2 = findViewById(R.id.heart2);
         h3 = findViewById(R.id.heart3);
 
         int numF1 = RandArray(arrayF11);
-        tv_hearts.setText(hearts.toString());
-
-
-        //int numF1 = intent.getIntExtra("numFamily",0);
+        tv_score.setText("0");
 
         factor1 = numF1;
         factor2 = randomNum.nextInt(10);
@@ -57,15 +57,10 @@ public class OperationsTriviaMult extends AppCompatActivity {
 
         tv_factor2.setText(factor2.toString());
 
-//        tv_result.setText(result.toString());
-//        tv_result.setVisibility(View.INVISIBLE);
-
         etResult = findViewById(R.id.et_result);
         etResult.requestFocus();
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
         btnResultgo = findViewById(R.id.btn_resultgo);
-
-
 
             btnResultgo.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -81,9 +76,10 @@ public class OperationsTriviaMult extends AppCompatActivity {
                         resultEDT = etResult.getText().toString();
 
                         if (Integer.parseInt(resultEDT) == result) {
-                            //  CORRECT ANSW
+                            //  CORRECT ANSW =================================================================
                             Toast.makeText(getApplicationContext(), "Correct", Toast.LENGTH_SHORT).show();
                             score = score+10;
+                            tv_score.setText(score.toString());
                             factor1 = RandArray(arrayF11);
                             factor2 = randomNum.nextInt(10);
                             result = factor1 * factor2;
@@ -92,14 +88,14 @@ public class OperationsTriviaMult extends AppCompatActivity {
                             tv_factor2.setText(factor2.toString());
                             etResult.getText().clear();
 
+
                         } else {
-                            //  WRONG ANSW
+                            //  WRONG ANSW ====================================================================
                             hearts=hearts-1;
                             if (NoHearts(hearts)){
                                 EndGame(score);
                             }else{
 
-                                tv_hearts.setText(hearts.toString());
                                 Toast.makeText(getApplicationContext(), "Try again", Toast.LENGTH_SHORT).show();
                                 factor1 = RandArray(arrayF11);
                                 factor2 = randomNum.nextInt(10);
@@ -141,6 +137,23 @@ public class OperationsTriviaMult extends AppCompatActivity {
         i.putExtra("score", score);
         startActivity(i);
 
+    }
+
+    public void prog(){
+        pb = findViewById(R.id.pb);
+
+        final Timer t = new Timer();
+        TimerTask tt = new TimerTask() {
+            @Override
+            public void run() {
+                counter= counter+5;
+                pb.setProgress(counter);
+
+                if (counter == 100)
+                    t.cancel();
+            }
+        };
+        t.schedule(tt,0,100);
     }
 
 }

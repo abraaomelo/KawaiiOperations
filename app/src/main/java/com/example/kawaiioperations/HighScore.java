@@ -1,5 +1,6 @@
 package com.example.kawaiioperations;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -22,4 +23,11 @@ public class HighScore extends AppCompatActivity {
         tv_score = findViewById(R.id.tv_points);
         tv_score.setText(score.toString());
     }
+
+    @Override
+    public void onBackPressed(){
+        Intent intentBack = new Intent(getApplicationContext(), MultChoose.class);
+        startActivity(intentBack);
+    }
+
 }

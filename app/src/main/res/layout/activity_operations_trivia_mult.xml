@@ -8,17 +8,7 @@
     android:background="#F7C9ED"
     >
 
-    <TextView
-        android:id="@+id/tv_hearts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="108dp"
-        android:text="hearts"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.155"
-        app:layout_constraintStart_toStartOf="parent" />
+
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -53,18 +43,30 @@
             android:layout_height="wrap_content"
             android:src="@drawable/blueheart" />
 
+
+        <Space
+            android:layout_width="15dp"
+            android:layout_height="wrap_content" />
+
+        <ProgressBar
+            android:id="@+id/pb_score"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="150dp"
+            android:scaleY="10"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+
     </LinearLayout>
 
     <TextView
-        android:id="@+id/score"
+        android:id="@+id/tv_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="116dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="28dp"
         android:text="Score"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.745"
-        app:layout_constraintStart_toEndOf="@+id/tv_hearts" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
