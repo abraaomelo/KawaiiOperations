@@ -26,16 +26,18 @@ public class OperationsTriviaMult extends AppCompatActivity {
     private Button btnResultgo;
     private EditText etResult;
     Random randomNum = new Random();
-    private Integer hearts=3, score=0,counter = 0;
+    private Integer hearts=3, score=0,counter = 100;
     private ImageView h1,h2,h3;
     ProgressBar pb;
-    //int counter = 0;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_operations_trivia_mult);
+
+        prog();
 
         Intent intent = getIntent();
         ArrayList<Integer> arrayF11 = intent.getIntegerArrayListExtra("numFamily");
@@ -87,7 +89,8 @@ public class OperationsTriviaMult extends AppCompatActivity {
                             tv_factor1.setText(factor1.toString());
                             tv_factor2.setText(factor2.toString());
                             etResult.getText().clear();
-
+                            counter=100;
+                            prog();
 
                         } else {
                             //  WRONG ANSW ====================================================================
@@ -104,15 +107,16 @@ public class OperationsTriviaMult extends AppCompatActivity {
                                 tv_factor1.setText(factor1.toString());
                                 tv_factor2.setText(factor2.toString());
                                 etResult.getText().clear();
+                                counter=100;
+                                prog();
                             }
+
                             if (hearts==2){
                                 h3.setVisibility(View.INVISIBLE);
                             }else if (hearts==1){
                                 h2.setVisibility(View.INVISIBLE);
                             }
-
                         }
-
                     }
                 } //END onClick
             }); //END SET ON CLICK LISTENER
@@ -132,28 +136,27 @@ public class OperationsTriviaMult extends AppCompatActivity {
         }
         return resultcheck;
     }
+
     public void EndGame(Integer score){
         Intent i = new Intent(getApplicationContext(), HighScore.class);
         i.putExtra("score", score);
         startActivity(i);
-
     }
 
     public void prog(){
-        pb = findViewById(R.id.pb);
+        pb = findViewById(R.id.pb_score);
 
         final Timer t = new Timer();
         TimerTask tt = new TimerTask() {
             @Override
             public void run() {
-                counter= counter+5;
+                counter= counter-1;
                 pb.setProgress(counter);
 
-                if (counter == 100)
+                if (counter == 0)
                     t.cancel();
             }
         };
         t.schedule(tt,0,100);
     }
-
 }

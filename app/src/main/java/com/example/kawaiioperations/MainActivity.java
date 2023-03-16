@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
         btn_mult = findViewById(R.id.btn_mult);
         btn_mult.setOnClickListener(new View.OnClickListener() {
+            
             @Override
             public void onClick(View view) {
                 Intent intentMultChoose = new Intent(getApplicationContext(), MultChoose.class);
